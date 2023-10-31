@@ -1,9 +1,31 @@
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
+- # While you’re in a gdb session, how do you set the arguments that will be passed to the program when it’s run?
+    - set args (e.g. set args arg1 arg2 arg3)
+
+- # How do you create a breakpoint?
+    - ## breakpoint by function
+        - break at the start of a function: `break func_name`
+    - ## breakpoint by line number
+        - break linenumber
+    - ## breakpoint by file and line number
+        - break example.c:10
+    - ## break by address
+        - break *0x4005d6
+    - ## conditional break
+        - break example.c:10 if x > 5
+    - ## temporary break
+        - tbreak 10
+- # How do you execute the next line of C code in the program after stopping at a breakpoint?
+    - `next`
+- # If the next line of code is a function call, you’ll execute the whole function call at once if you use your answer to #3. (If not, consider a different command for #3!) How do you tell GDB that you want to debug the code inside the function (i.e. step into the function) instead? (If you changed your answer to #3, then that answer is most likely now applicable here.)
+    - `step`
+- # How do you continue the program after stopping at a breakpoint?
+    - `continue` \ `c`
+- # How can you print the value of a variable (or even an expression like 1+2) in gdb?
+    - `print person.age` / `print 1+2`
+- # How do you configure gdb so it displays the value of a variable after every step?
+    - `display x` and `display y`
+    - `info display` to show all the display information
+- # How do you show a list of all variables and their values in the current function?
+    - after getting into the function (e.g. break func_name), we can use info locals to show all the local variables.
+- # How do you quit out of gdb?
+    - `q`
